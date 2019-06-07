@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		7DC1E28522AAD3FF00551116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E28422AAD3FF00551116 /* AppDelegate.swift */; };
-		7DC1E28722AAD3FF00551116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E28622AAD3FF00551116 /* ViewController.swift */; };
 		7DC1E28A22AAD3FF00551116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC1E28822AAD3FF00551116 /* Main.storyboard */; };
 		7DC1E28C22AAD40000551116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC1E28B22AAD40000551116 /* Assets.xcassets */; };
 		7DC1E28F22AAD40000551116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC1E28D22AAD40000551116 /* LaunchScreen.storyboard */; };
+		7DC1E29A22AAD45200551116 /* CirclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E29922AAD45200551116 /* CirclesViewController.swift */; };
+		7DC1E29C22AAD46900551116 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E29B22AAD46900551116 /* Circle.swift */; };
+		7DC1E29E22AAD48300551116 /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E29D22AAD48300551116 /* ResetButton.swift */; };
+		7DC1E2A122AAD4A200551116 /* CircleTapContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E2A022AAD4A200551116 /* CircleTapContext.swift */; };
+		7DC1E2A322AAD4B900551116 /* CircleTapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E2A222AAD4B900551116 /* CircleTapState.swift */; };
+		7DC1E2A522AAD4CF00551116 /* FirstCircleTapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E2A422AAD4CF00551116 /* FirstCircleTapState.swift */; };
+		7DC1E2A722AAD4E800551116 /* NextCircleTapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1E2A622AAD4E800551116 /* NextCircleTapState.swift */; };
+		7DC1E2A922AAD5B400551116 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7DC1E2A822AAD5B400551116 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DC1E28122AAD3FF00551116 /* iOSAssignment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAssignment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC1E28422AAD3FF00551116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7DC1E28622AAD3FF00551116 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7DC1E28922AAD3FF00551116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DC1E28B22AAD40000551116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DC1E28E22AAD40000551116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DC1E29022AAD40000551116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DC1E29922AAD45200551116 /* CirclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesViewController.swift; sourceTree = "<group>"; };
+		7DC1E29B22AAD46900551116 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		7DC1E29D22AAD48300551116 /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
+		7DC1E2A022AAD4A200551116 /* CircleTapContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTapContext.swift; sourceTree = "<group>"; };
+		7DC1E2A222AAD4B900551116 /* CircleTapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTapState.swift; sourceTree = "<group>"; };
+		7DC1E2A422AAD4CF00551116 /* FirstCircleTapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCircleTapState.swift; sourceTree = "<group>"; };
+		7DC1E2A622AAD4E800551116 /* NextCircleTapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCircleTapState.swift; sourceTree = "<group>"; };
+		7DC1E2A822AAD5B400551116 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +52,7 @@
 		7DC1E27822AAD3FF00551116 = {
 			isa = PBXGroup;
 			children = (
+				7DC1E2A822AAD5B400551116 /* README.md */,
 				7DC1E28322AAD3FF00551116 /* iOSAssignment2 */,
 				7DC1E28222AAD3FF00551116 /* Products */,
 			);
@@ -54,14 +69,52 @@
 		7DC1E28322AAD3FF00551116 /* iOSAssignment2 */ = {
 			isa = PBXGroup;
 			children = (
+				7DC1E29822AAD42A00551116 /* Controller */,
+				7DC1E29722AAD42400551116 /* View */,
+				7DC1E29622AAD41C00551116 /* Model */,
 				7DC1E28422AAD3FF00551116 /* AppDelegate.swift */,
-				7DC1E28622AAD3FF00551116 /* ViewController.swift */,
 				7DC1E28822AAD3FF00551116 /* Main.storyboard */,
 				7DC1E28B22AAD40000551116 /* Assets.xcassets */,
 				7DC1E28D22AAD40000551116 /* LaunchScreen.storyboard */,
 				7DC1E29022AAD40000551116 /* Info.plist */,
 			);
 			path = iOSAssignment2;
+			sourceTree = "<group>";
+		};
+		7DC1E29622AAD41C00551116 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DC1E29F22AAD49100551116 /* CircleTapState */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DC1E29722AAD42400551116 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DC1E29B22AAD46900551116 /* Circle.swift */,
+				7DC1E29D22AAD48300551116 /* ResetButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7DC1E29822AAD42A00551116 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7DC1E29922AAD45200551116 /* CirclesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7DC1E29F22AAD49100551116 /* CircleTapState */ = {
+			isa = PBXGroup;
+			children = (
+				7DC1E2A022AAD4A200551116 /* CircleTapContext.swift */,
+				7DC1E2A222AAD4B900551116 /* CircleTapState.swift */,
+				7DC1E2A422AAD4CF00551116 /* FirstCircleTapState.swift */,
+				7DC1E2A622AAD4E800551116 /* NextCircleTapState.swift */,
+			);
+			path = CircleTapState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +177,7 @@
 			files = (
 				7DC1E28F22AAD40000551116 /* LaunchScreen.storyboard in Resources */,
 				7DC1E28C22AAD40000551116 /* Assets.xcassets in Resources */,
+				7DC1E2A922AAD5B400551116 /* README.md in Resources */,
 				7DC1E28A22AAD3FF00551116 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC1E28722AAD3FF00551116 /* ViewController.swift in Sources */,
+				7DC1E29A22AAD45200551116 /* CirclesViewController.swift in Sources */,
 				7DC1E28522AAD3FF00551116 /* AppDelegate.swift in Sources */,
+				7DC1E2A722AAD4E800551116 /* NextCircleTapState.swift in Sources */,
+				7DC1E29C22AAD46900551116 /* Circle.swift in Sources */,
+				7DC1E2A322AAD4B900551116 /* CircleTapState.swift in Sources */,
+				7DC1E29E22AAD48300551116 /* ResetButton.swift in Sources */,
+				7DC1E2A522AAD4CF00551116 /* FirstCircleTapState.swift in Sources */,
+				7DC1E2A122AAD4A200551116 /* CircleTapContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
