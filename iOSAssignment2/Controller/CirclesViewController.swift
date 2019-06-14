@@ -10,10 +10,7 @@ import UIKit
 
 class CirclesViewController: UIViewController
 {
-    var circle1 : Circle?
-    var circle2 : Circle?
-    var circle3 : Circle?
-    var circle4 : Circle?
+    var circles : [Circle] = [Circle]()
     
     var resetButton : ResetButton?
     
@@ -40,10 +37,10 @@ class CirclesViewController: UIViewController
         let radius : CGFloat = smallerSide / 4 - (0.11 * smallerSide)
         
         //create the four circles, centered at the layout guides built
-        circle1 = Circle(center: CGPoint(x: leftHorizontalGuide, y: topVerticalGuide), radius: radius, number: "1")
-        circle2 = Circle(center: CGPoint(x: rightHorizontalGuide, y: topVerticalGuide), radius: radius, number: "2")
-        circle3 = Circle(center: CGPoint(x: leftHorizontalGuide, y: bottomVerticalGuide), radius: radius, number: "3")
-        circle4 = Circle(center: CGPoint(x: rightHorizontalGuide, y: bottomVerticalGuide), radius: radius, number: "4")
+        circles.append(Circle(center: CGPoint(x: leftHorizontalGuide, y: topVerticalGuide), radius: radius, number: "1"))
+        circles.append(Circle(center: CGPoint(x: rightHorizontalGuide, y: topVerticalGuide), radius: radius, number: "2"))
+        circles.append(Circle(center: CGPoint(x: leftHorizontalGuide, y: bottomVerticalGuide), radius: radius, number: "3"))
+        circles.append(Circle(center: CGPoint(x: rightHorizontalGuide, y: bottomVerticalGuide), radius: radius, number: "4"))
         
         //create reset button, will be resize with layout constraints
         resetButton = ResetButton(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0))
@@ -52,17 +49,12 @@ class CirclesViewController: UIViewController
         
         //add tap gestures to circles and reset button
         //
-        let circle1Tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.circle1Tapped))
-        circle1!.addGestureRecognizer(circle1Tap)
-        
-        let circle2Tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.circle2Tapped))
-        circle2!.addGestureRecognizer(circle2Tap)
-        
-        let circle3Tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.circle3Tapped))
-        circle3!.addGestureRecognizer(circle3Tap)
-        
-        let circle4Tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.circle4Tapped))
-        circle4!.addGestureRecognizer(circle4Tap)
+        for circle in circles
+        {
+            //let circleTap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.circleTapped(sender:)))
+            //circle.addGestureRecognizer(circleTap)
+            circle.addTarget(self, action: #selector(self.circleTapped(circleIn:)), for: .touchUpInside)
+        }
         
         let resetTap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.resetTapped))
         resetButton!.addGestureRecognizer(resetTap)
@@ -70,15 +62,15 @@ class CirclesViewController: UIViewController
         //-----
         
         //create the circles tap state
-        circleTaps = CircleTapContext(circle1In: circle1!, circle2In: circle2!, circle3In: circle3!, circle4In: circle4!, resetButtonIn: resetButton!, radiusIn: radius)
+        circleTaps = CircleTapContext(circlesIn: circles, resetButtonIn: resetButton!, radiusIn: radius)
         
         //-----
         
         //add circles and reset button to be rendered
-        view.addSubview(circle1!)
-        view.addSubview(circle2!)
-        view.addSubview(circle3!)
-        view.addSubview(circle4!)
+        for circle in circles
+        {
+            view.addSubview(circle)
+        }
         
         view.addSubview(resetButton!)
         
@@ -114,28 +106,13 @@ class CirclesViewController: UIViewController
     //functions associated to taps on circles and reset button
     //@objc to work with selectors
     //
-    @objc func circle1Tapped()
-    {
-        circleTaps!.circle1Tapped()
-    }
-    
-    @objc func circle2Tapped()
-    {
-        circleTaps!.circle2Tapped()
-    }
-    
-    @objc func circle3Tapped()
-    {
-        circleTaps!.circle3Tapped()
-    }
-    
-    @objc func circle4Tapped()
-    {
-        circleTaps!.circle4Tapped()
-    }
-    
     @objc func resetTapped()
     {
         circleTaps!.setToFirstCircleTap()
+    }
+    
+    @objc func circleTapped(circleIn : Circle)
+    {
+        circleTaps!.circleTapped(circleIn: circleIn)
     }
 }

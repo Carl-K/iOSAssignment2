@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Circle : UIView
+class Circle : UIButton
 {
     var label : UILabel
     
@@ -22,8 +22,6 @@ class Circle : UIView
         
         self.radius = radius
         
-        //I'd prefer to use constraints to size and place label, but it animates poorly if done so
-        //
         label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
         
         super.init(frame: frame)

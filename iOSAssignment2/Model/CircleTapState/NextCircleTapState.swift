@@ -15,19 +15,13 @@ import UIKit
 //
 class NextCircleTapState : CircleTapState
 {
-    let circle1 : Circle
-    let circle2 : Circle
-    let circle3 : Circle
-    let circle4 : Circle
+    let circles : [Circle]
     
     let radius : CGFloat
     
-    init(circle1In : Circle, circle2In : Circle, circle3In : Circle, circle4In : Circle, radiusIn : CGFloat)
+    init(circlesIn : [Circle], radiusIn : CGFloat)
     {
-        circle1 = circle1In
-        circle2 = circle2In
-        circle3 = circle3In
-        circle4 = circle4In
+        circles = circlesIn
         
         radius = radiusIn
     }
@@ -35,24 +29,9 @@ class NextCircleTapState : CircleTapState
     //these "handle" functions only resize the circle that is tapped
     //does not change state here
     //
-    func circle1Tapped(contextIn : CircleTapContext)
+    func circleTapped(contextIn : CircleTapContext, circleIn : Circle)
     {
-        animate(circleIn: circle1, contextIn: contextIn)
-    }
-    
-    func circle2Tapped(contextIn : CircleTapContext)
-    {
-        animate(circleIn: circle2, contextIn: contextIn)
-    }
-    
-    func circle3Tapped(contextIn : CircleTapContext)
-    {
-        animate(circleIn: circle3, contextIn: contextIn)
-    }
-    
-    func circle4Tapped(contextIn : CircleTapContext)
-    {
-        animate(circleIn: circle4, contextIn: contextIn)
+        animate(circleIn: circleIn, contextIn: contextIn)
     }
     
     //resizes the circle tapped, makes it either bigger or smaller
@@ -93,17 +72,17 @@ class NextCircleTapState : CircleTapState
     //
     func disableAll()
     {
-        circle1.isUserInteractionEnabled = false
-        circle2.isUserInteractionEnabled = false
-        circle3.isUserInteractionEnabled = false
-        circle4.isUserInteractionEnabled = false
+        for circle in self.circles
+        {
+            circle.isUserInteractionEnabled = false
+        }
     }
     
     func enableAll()
     {
-        circle1.isUserInteractionEnabled = true
-        circle2.isUserInteractionEnabled = true
-        circle3.isUserInteractionEnabled = true
-        circle4.isUserInteractionEnabled = true
+        for circle in self.circles
+        {
+            circle.isUserInteractionEnabled = true
+        }
     }
 }

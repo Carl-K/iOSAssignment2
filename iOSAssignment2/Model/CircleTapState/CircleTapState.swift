@@ -13,9 +13,6 @@ import Foundation
 //
 protocol CircleTapState
 {
-    func circle1Tapped(contextIn : CircleTapContext)
-    func circle2Tapped(contextIn : CircleTapContext)
-    func circle3Tapped(contextIn : CircleTapContext)
-    func circle4Tapped(contextIn : CircleTapContext)
+    func circleTapped(contextIn : CircleTapContext, circleIn : Circle)
 }
 

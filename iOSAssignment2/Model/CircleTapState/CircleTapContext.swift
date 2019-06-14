@@ -22,10 +22,7 @@ import UIKit
  */
 class CircleTapContext
 {
-    let circle1 : Circle
-    let circle2 : Circle
-    let circle3 : Circle
-    let circle4 : Circle
+    let circles : [Circle]
     
     var current : CircleTapState
     
@@ -39,17 +36,14 @@ class CircleTapContext
     
     let radius : CGFloat
     
-    init(circle1In : Circle, circle2In : Circle, circle3In : Circle, circle4In : Circle, resetButtonIn : ResetButton, radiusIn : CGFloat)
+    init(circlesIn : [Circle], resetButtonIn : ResetButton, radiusIn : CGFloat)
     {
-        circle1 = circle1In
-        circle2 = circle2In
-        circle3 = circle3In
-        circle4 = circle4In
+        circles = circlesIn
         
         //setup states
         //
-        firstCircleTap = FirstCircleTapState(circle1In: circle1, circle2In: circle2, circle3In: circle3, circle4In: circle4, radiusIn: radiusIn)
-        nextCircleTap = NextCircleTapState(circle1In: circle1, circle2In: circle2, circle3In: circle3, circle4In: circle4, radiusIn: radiusIn)
+        firstCircleTap = FirstCircleTapState(circlesIn: circles, radiusIn: radiusIn)
+        nextCircleTap = NextCircleTapState(circlesIn: circles, radiusIn: radiusIn)
         
         resetButton = resetButtonIn
         
@@ -69,24 +63,9 @@ class CircleTapContext
     //pass in context to update state when appropriate
     //the "request" functions in a context class that calls a state's "handle" function
     //
-    func circle1Tapped()
+    func circleTapped(circleIn : Circle)
     {
-        current.circle1Tapped(contextIn: self)
-    }
-    
-    func circle2Tapped()
-    {
-        current.circle2Tapped(contextIn: self)
-    }
-    
-    func circle3Tapped()
-    {
-        current.circle3Tapped(contextIn: self)
-    }
-    
-    func circle4Tapped()
-    {
-        current.circle4Tapped(contextIn: self)
+        current.circleTapped(contextIn: self, circleIn: circleIn)
     }
     
     //when going back to initial state (after reset button press)
@@ -101,10 +80,10 @@ class CircleTapContext
             {
                 () -> Void in
                 
-                self.circle1.setRadius(radiusIn: self.radius)
-                self.circle2.setRadius(radiusIn: self.radius)
-                self.circle3.setRadius(radiusIn: self.radius)
-                self.circle4.setRadius(radiusIn: self.radius)
+                for circle in self.circles
+                {
+                    circle.setRadius(radiusIn: self.radius)
+                }
         })
         { (b) in
             
@@ -138,18 +117,17 @@ class CircleTapContext
     //
     func disableAll()
     {
-        circle1.isUserInteractionEnabled = false
-        circle2.isUserInteractionEnabled = false
-        circle3.isUserInteractionEnabled = false
-        circle4.isUserInteractionEnabled = false
+        for circle in self.circles
+        {
+            circle.isUserInteractionEnabled = false
+        }
     }
     
     func enableAll()
     {
-        circle1.isUserInteractionEnabled = true
-        circle2.isUserInteractionEnabled = true
-        circle3.isUserInteractionEnabled = true
-        circle4.isUserInteractionEnabled = true
+        for circle in self.circles
+        {
+            circle.isUserInteractionEnabled = true
+        }
     }
 }
-
