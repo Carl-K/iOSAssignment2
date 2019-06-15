@@ -22,11 +22,12 @@ class Circle : UIButton
         
         self.radius = radius
         
-        label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
+        label = UILabel()
+        //label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
         
         super.init(frame: frame)
         
-        label.frame.origin.x = (bounds.width / 2) - (label.frame.width / 2)
+        //label.frame.origin.x = (bounds.width / 2) - (label.frame.width / 2)
         
         backgroundColor = .clear
         
@@ -43,25 +44,25 @@ class Circle : UIButton
     //some label configuration shared in init methods
     private func configureLabel(number : String)
     {
-        /*
-         //does not animate well
-         //
-         //add layout constraints to the number label
-         //based on parent's layout
-         
-         label.translatesAutoresizingMaskIntoConstraints = false
-         
-         NSLayoutConstraint.activate(
-         [
-         label.topAnchor.constraint(equalTo: topAnchor),
-         label.bottomAnchor.constraint(equalTo: topAnchor, constant: 50.0),
-         label.leftAnchor.constraint(equalTo: leftAnchor),
-         label.rightAnchor.constraint(equalTo: rightAnchor)
-         ]
-         )
-         
-         //-----
-         */
+        label.contentMode = .center
+        
+        //does not animate well
+        //
+        //add layout constraints to the number label
+        //based on parent's layout
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate(
+            [
+                label.topAnchor.constraint(equalTo: topAnchor),
+                label.bottomAnchor.constraint(equalTo: topAnchor, constant: 50.0),
+                label.leftAnchor.constraint(equalTo: leftAnchor),
+                label.rightAnchor.constraint(equalTo: rightAnchor)
+            ]
+        )
+        
+        //-----
         
         label.backgroundColor = .clear
         label.text = number
