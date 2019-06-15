@@ -44,13 +44,11 @@ class Circle : UIButton
     //some label configuration shared in init methods
     private func configureLabel(number : String)
     {
+        //change so label animates properly
         label.contentMode = .center
         
-        //does not animate well
-        //
         //add layout constraints to the number label
         //based on parent's layout
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate(
